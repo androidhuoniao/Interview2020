@@ -1,1 +1,4 @@
 /Interview2020.iml
+/.idea/*
+/out/*
+/.idea/vcs.xml
