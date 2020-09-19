@@ -1,5 +1,7 @@
 package com.grass.interview.suanfa.linkedlist;
 
+import java.util.List;
+
 public class LinkedListFactory {
 
     public static Node getNormalLinkedList() {
@@ -24,4 +26,18 @@ public class LinkedListFactory {
         return headNode;
     }
 
+    public static Node getLinekedList(List<String> dataList) {
+        Node heaadNode = null;
+        Node preNode = null;
+        for (String s : dataList) {
+            Node tempNode = new Node(s);
+            if (heaadNode == null) {
+                heaadNode = tempNode;
+            } else {
+                preNode.next = tempNode;
+            }
+            preNode = tempNode;
+        }
+        return heaadNode;
+    }
 }

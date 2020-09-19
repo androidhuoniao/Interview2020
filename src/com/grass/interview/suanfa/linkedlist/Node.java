@@ -8,6 +8,9 @@ public class Node {
         this.data = data;
     }
 
+    public int getIntdata() {
+        return Integer.parseInt(data);
+    }
     @Override
     public String toString() {
         return "Node{" +
