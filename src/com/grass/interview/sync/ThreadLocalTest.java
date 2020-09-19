@@ -5,7 +5,8 @@ import java.util.List;
 
 public class ThreadLocalTest {
     private List<String> messages = new ArrayList<String>();
-    public static final ThreadLocal<ThreadLocalTest> holder = ThreadLocal.withInitial(new ThreadLocalTest());
+//    public static final ThreadLocal<ThreadLocalTest> holder = ThreadLocal.withInitial(new ThreadLocalTest());
+public static final ThreadLocal<ThreadLocalTest> holder = null;
 
     public static void add(String message) {
         holder.get().messages.add(message);
