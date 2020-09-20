@@ -46,9 +46,11 @@ public class QuickSortMain {
         }
     }
 
+
     /**
-     * 第一版，整个有问题啊
-     *
+     * qsort函数为什么返回low呢？
+     * 因为在退出最外层的while循环的时候，low==high，并且是在列表的中间位置，
+     * 就是枢轴
      * @param array
      * @param low
      * @param high
@@ -67,6 +69,7 @@ public class QuickSortMain {
             }
             swap(array, low, high);
         }
+        // 返回枢轴所在的位置
         return low;
     }
 
