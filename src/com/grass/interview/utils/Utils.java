@@ -1,4 +1,4 @@
-package com.grass.interview;
+package com.grass.interview.utils;
 
 public class Utils {
     public static void swap(int[] array, int leftIndex, int rightIndex) {

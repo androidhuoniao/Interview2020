@@ -23,7 +23,6 @@ public class BinaryTreeUtils {
             } else {
                 insertBinaryTreeNode(root.left, value);
             }
-
         } else {
             if (root.right == null) {
                 root.right = new BinaryNode(value);

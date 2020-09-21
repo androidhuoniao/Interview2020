@@ -29,20 +29,15 @@ public class BinaryTreeMain {
         if (root != null) {
             queue.add(root);
         }
-
         while (!queue.isEmpty()) {
-
             root = (BinaryNode) queue.poll();
             System.out.print(root.value + " ");
-
             if (root.left != null) {
                 queue.offer(root.left);
             }
-
             if (root.right != null) {
                 queue.offer(root.right);
             }
-
         }
     }
 
@@ -53,7 +48,6 @@ public class BinaryTreeMain {
         while (!stack.isEmpty()) {
             root = (BinaryNode) stack.pop();
             System.out.print(root.value + " ");
-
             if (root.right != null) {
                 stack.push(root.right);
             }

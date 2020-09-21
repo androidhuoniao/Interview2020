@@ -12,7 +12,7 @@ public class Main {
         interceptors.add(new ParserNetworkInterceptor());
         interceptors.add(new ResultCallbackInterceptor());
         String request = "开始";
-       RealInterceptorChain realInterceptorChain = new RealInterceptorChain(interceptors, 0, request);
+        RealInterceptorChain realInterceptorChain = new RealInterceptorChain(interceptors, 0, request);
         String response = realInterceptorChain.process(request);
         System.out.println(response);
     }
