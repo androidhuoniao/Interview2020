@@ -21,7 +21,6 @@ public class BinaryTreeMain {
         printBinaryTreeDepthFirst(root);
         System.out.println("");
         System.out.println("深度：" + calculateDepthBinaryTree(root));
-        ;
     }
 
     public static void printBinaryTreeWidthFirst(BinaryNode root) {
