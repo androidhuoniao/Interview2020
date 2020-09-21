@@ -1,5 +1,10 @@
 package com.grass.interview.suanfa.sort;
 
+
+import com.grass.interview.utils.LogUtils;
+
+import static com.grass.interview.utils.LogUtils.getLogStr;
+
 /**
  * Created by grassswwang
  * on 2020/9/20
@@ -112,19 +117,5 @@ public class QuickSortMain {
         array[index2] = value1;
     }
 
-    private static <T> String getLogStr(T[] array) {
-        StringBuffer sb = new StringBuffer();
-        for (T t : array) {
-            sb.append(t.toString()).append(" , ");
-        }
-        return sb.toString();
-    }
 
-    private static String getLogStr(int[] array) {
-        StringBuffer sb = new StringBuffer();
-        for (int t : array) {
-            sb.append(t).append(" , ");
-        }
-        return sb.toString();
-    }
 }
