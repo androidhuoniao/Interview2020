@@ -10,14 +10,16 @@ public class HelloCount1 {
         System.out.println(i);
     }
 
-    public static int times1(int n ){
+    public static int times1(int n) {
         int count = 0;
         int flag = 1;
-        while(flag <= n){
-            if((n&flag) != 0)
+        while (flag <= n) {
+            if ((n & flag) != 0)
                 count++;
-            flag = flag<<1;
+            flag = flag << 1;
         }
         return count;
     }
+
+
 }
