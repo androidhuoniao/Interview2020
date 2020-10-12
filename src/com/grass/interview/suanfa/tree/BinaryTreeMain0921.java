@@ -213,7 +213,7 @@ public class BinaryTreeMain0921 {
         return depth;
     }
 
-    public int computeTreeDepthBFS(BinaryNode binaryTree) {
+    public static int computeTreeDepthBFS(BinaryNode binaryTree) {
         //实例化队列
         Queue<BinaryNode> mVisitList = new LinkedList<>();
         BinaryNode tmp;
