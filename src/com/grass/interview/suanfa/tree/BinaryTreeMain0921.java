@@ -65,11 +65,12 @@ public class BinaryTreeMain0921 {
     }
 
     public static void printBinaryTreeWidthFirst(BinaryNode root) {
+        StringBuffer sb = new StringBuffer();
         LinkedList<BinaryNode> list = new LinkedList<>();
         list.add(root);
         while (!list.isEmpty()) {
             BinaryNode node = list.poll();
-            System.out.println(node.value);
+            sb.append(node.value).append(",");
             if (node.left != null) {
                 list.offer(node.left);
             }
@@ -77,17 +78,20 @@ public class BinaryTreeMain0921 {
                 list.offer(node.right);
             }
         }
+        System.out.println("BFS: " + sb.toString());
     }
 
     public static void printBinaryTreeDepthFirst(BinaryNode root) {
         if (root == null) {
             return;
         }
+        StringBuffer sb = new StringBuffer();
         Stack<BinaryNode> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             root = stack.pop();
-            System.out.println(String.valueOf(root.value));
+            sb.append(root.value).append(",");
+//            System.out.println(String.valueOf(root.value));
             if (root.right != null) {
                 stack.push(root.right);
             }
@@ -95,6 +99,7 @@ public class BinaryTreeMain0921 {
                 stack.push(root.left);
             }
         }
+        System.out.println("DFS: " + sb.toString());
     }
 
     public static int calculateDepthBinaryTree(BinaryNode root) {
@@ -177,13 +182,13 @@ public class BinaryTreeMain0921 {
         }
     }
 
-    public int computeTreeDepthDFS(BinaryNode binaryTree){
+    public int computeTreeDepthDFS(BinaryNode binaryTree) {
         //实例化栈
         Stack<BinaryNode> mVisitList = new Stack<>();
         BinaryNode tmp = binaryTree;
         int depth = 0;//遍历过程中到最大深度
-        while (tmp != null){
-            if(tmp.left!= null || tmp.right != null){
+        while (tmp != null) {
+            if (tmp.left != null || tmp.right != null) {
                 //如果有子树，将当前节点入栈，且更新最大深度
                 mVisitList.push(tmp);
                 depth = Math.max(depth, mVisitList.size());
@@ -194,8 +199,8 @@ public class BinaryTreeMain0921 {
             //当前节点没有子树，直接更新最大深度（访问到当前节点到深度是栈的深度+1）
             depth = Math.max(depth, mVisitList.size() + 1);
             //此时回溯去找右子树
-            while (!mVisitList.isEmpty()){
-                if(mVisitList.peek().left != null && mVisitList.peek().right != tmp){
+            while (!mVisitList.isEmpty()) {
+                if (mVisitList.peek().left != null && mVisitList.peek().right != tmp) {
                     //如果栈顶节点的右子树不为空，且栈顶节点的右子树不等于正在访问的节点，访问右子树
                     tmp = mVisitList.peek().left;
                     break;
@@ -208,28 +213,28 @@ public class BinaryTreeMain0921 {
         return depth;
     }
 
-    public int computeTreeDepthBFS(BinaryNode binaryTree){
+    public int computeTreeDepthBFS(BinaryNode binaryTree) {
         //实例化队列
         Queue<BinaryNode> mVisitList = new LinkedList<>();
         BinaryNode tmp;
         int depth = 0, lengthTmp;
-        if(binaryTree == null){
+        if (binaryTree == null) {
             //根为空，直接返回0
             return 0;
         }
         //将根加入队列
         mVisitList.offer(binaryTree);
-        while (!mVisitList.isEmpty()){
+        while (!mVisitList.isEmpty()) {
             //只要队列不为空，说明新的一层数据不为空，且已经加到队列，深度+1
-            depth ++;
+            depth++;
             //遍历该层到所有数据，将他们出队，并附带把所有下一层到数据都加进来(如果有的话)
             lengthTmp = mVisitList.size();
-            while (lengthTmp-- > 0){
+            while (lengthTmp-- > 0) {
                 tmp = mVisitList.poll();
-                if(tmp.left != null){
+                if (tmp.left != null) {
                     mVisitList.offer(tmp.left);
                 }
-                if(tmp.right != null){
+                if (tmp.right != null) {
                     mVisitList.offer(tmp.right);
                 }
             }
