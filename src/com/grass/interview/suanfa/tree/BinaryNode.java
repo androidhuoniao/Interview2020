@@ -5,7 +5,7 @@ package com.grass.interview.suanfa.tree;
  * on 2020/9/20
  * Email: grassswwang@tencent.com
  */
-class BinaryNode {
+public class BinaryNode {
     public int value = 0;
     public BinaryNode left;
     public BinaryNode right;
